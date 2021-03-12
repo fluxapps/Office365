@@ -1,0 +1,361 @@
+[
+    {
+        "name": "srag/activerecordconfig",
+        "version": "0.20.3",
+        "version_normalized": "0.20.3.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/fluxfw/ActiveRecordConfig.git",
+            "reference": "358df38d014e2538dd439a128e26674769b22f81"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/fluxfw/ActiveRecordConfig/zipball/358df38d014e2538dd439a128e26674769b22f81",
+            "reference": "358df38d014e2538dd439a128e26674769b22f81",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=7.0",
+            "srag/custominputguis": ">=0.1.0",
+            "srag/dic": ">=0.1.0"
+        },
+        "require-dev": {
+            "srag/generateplugininfoshelper": ">=0.1.0"
+        },
+        "time": "2021-03-03T09:52:27+00:00",
+        "type": "library",
+        "extra": {
+            "ilias_plugin": {
+                "ilias_min_version": "5.4.0",
+                "ilias_max_version": "6.999"
+            },
+            "generate_plugin_readme_template": "SRAG_ILIAS_LIBRARY",
+            "long_description_template": "src/LONG_DESCRIPTION.md"
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "srag\\ActiveRecordConfig\\M365File\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL-3.0-only"
+        ],
+        "authors": [
+            {
+                "name": "studer + raimann ag - Team Custom 1",
+                "email": "support-custom1@studer-raimann.ch",
+                "homepage": "https://studer-raimann.ch",
+                "role": "Developer"
+            }
+        ],
+        "description": "Simple ActiveRecord config for ILIAS plugins",
+        "homepage": "https://github.com/fluxfw/ActiveRecordConfig",
+        "keywords": [
+            "ILIAS",
+            "activerecord",
+            "config"
+        ]
+    },
+    {
+        "name": "srag/custominputguis",
+        "version": "0.42.3",
+        "version_normalized": "0.42.3.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/fluxfw/CustomInputGUIs.git",
+            "reference": "43cbf30e200613aac2eb01f641773bb670c61230"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/fluxfw/CustomInputGUIs/zipball/43cbf30e200613aac2eb01f641773bb670c61230",
+            "reference": "43cbf30e200613aac2eb01f641773bb670c61230",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=7.0",
+            "srag/dic": ">=0.1.0"
+        },
+        "require-dev": {
+            "srag/generateplugininfoshelper": ">=0.1.0"
+        },
+        "time": "2021-03-05T11:08:03+00:00",
+        "type": "library",
+        "extra": {
+            "ilias_plugin": {
+                "ilias_min_version": "5.4.0",
+                "ilias_max_version": "6.999"
+            },
+            "generate_plugin_readme_template": "SRAG_ILIAS_LIBRARY",
+            "long_description_template": "src/LONG_DESCRIPTION.md"
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "srag\\CustomInputGUIs\\M365File\\": "src/"
+            },
+            "classmap": [
+                "src/MultiSelectSearchNewInputGUI/class.ObjectChildrenAjaxAutoCompleteCtrl.php",
+                "src/MultiSelectSearchNewInputGUI/class.ObjectsAjaxAutoCompleteCtrl.php",
+                "src/MultiSelectSearchNewInputGUI/class.OrgUnitAjaxAutoCompleteCtrl.php",
+                "src/MultiSelectSearchNewInputGUI/class.UsersAjaxAutoCompleteCtrl.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL-3.0-only"
+        ],
+        "authors": [
+            {
+                "name": "studer + raimann ag - Team Custom 1",
+                "email": "support-custom1@studer-raimann.ch",
+                "homepage": "https://studer-raimann.ch",
+                "role": "Developer"
+            }
+        ],
+        "description": "Custom Input-GUI's",
+        "homepage": "https://github.com/fluxfw/CustomInputGUIs",
+        "keywords": [
+            "ILIAS",
+            "PropertyForm",
+            "gui",
+            "input",
+            "table"
+        ]
+    },
+    {
+        "name": "srag/dic",
+        "version": "0.32.1",
+        "version_normalized": "0.32.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/fluxfw/DIC.git",
+            "reference": "d12c2fb65081ea9b277606c44c5b15e4cc11e017"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/fluxfw/DIC/zipball/d12c2fb65081ea9b277606c44c5b15e4cc11e017",
+            "reference": "d12c2fb65081ea9b277606c44c5b15e4cc11e017",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=7.0"
+        },
+        "require-dev": {
+            "srag/generateplugininfoshelper": ">=0.1.0"
+        },
+        "time": "2021-03-05T11:06:12+00:00",
+        "type": "library",
+        "extra": {
+            "ilias_plugin": {
+                "ilias_min_version": "5.4.0",
+                "ilias_max_version": "6.999"
+            },
+            "generate_plugin_readme_template": "SRAG_ILIAS_LIBRARY",
+            "long_description_template": "src/LONG_DESCRIPTION.md"
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "srag\\DIC\\M365File\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL-3.0-only"
+        ],
+        "authors": [
+            {
+                "name": "studer + raimann ag - Team Custom 1",
+                "email": "support-custom1@studer-raimann.ch",
+                "homepage": "https://studer-raimann.ch",
+                "role": "Developer"
+            }
+        ],
+        "description": "Use all ILIAS globals in your class",
+        "homepage": "https://github.com/fluxfw/DIC",
+        "keywords": [
+            "ILIAS",
+            "dic",
+            "globals",
+            "trait"
+        ]
+    },
+    {
+        "name": "srag/librariesnamespacechanger",
+        "version": "0.15.1",
+        "version_normalized": "0.15.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/fluxfw/LibrariesNamespaceChanger.git",
+            "reference": "4d9567c0e83f325849e948960382c9cde612d474"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/fluxfw/LibrariesNamespaceChanger/zipball/4d9567c0e83f325849e948960382c9cde612d474",
+            "reference": "4d9567c0e83f325849e948960382c9cde612d474",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=7.0"
+        },
+        "require-dev": {
+            "srag/generateplugininfoshelper": ">=0.1.0"
+        },
+        "time": "2021-03-03T09:56:22+00:00",
+        "type": "library",
+        "extra": {
+            "generate_plugin_readme_template": "SRAG_LIBRARY",
+            "long_description_template": "src/LONG_DESCRIPTION.md"
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "srag\\LibrariesNamespaceChanger\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL-3.0-only"
+        ],
+        "authors": [
+            {
+                "name": "studer + raimann ag - Team Custom 1",
+                "email": "support-custom1@studer-raimann.ch",
+                "homepage": "https://studer-raimann.ch",
+                "role": "Developer"
+            }
+        ],
+        "description": "Change namespace of libraries to plugin namespace",
+        "homepage": "https://github.com/fluxfw/LibrariesNamespaceChanger",
+        "keywords": [
+            "changer",
+            "libraries",
+            "namespace"
+        ]
+    },
+    {
+        "name": "srag/librarylanguageinstaller",
+        "version": "1.1.3",
+        "version_normalized": "1.1.3.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/fluxfw/LibraryLanguageInstaller.git",
+            "reference": "0de37a9ae176e8b086d83d6b564902f08f1b81c7"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/fluxfw/LibraryLanguageInstaller/zipball/0de37a9ae176e8b086d83d6b564902f08f1b81c7",
+            "reference": "0de37a9ae176e8b086d83d6b564902f08f1b81c7",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=7.0",
+            "srag/dic": ">=0.1.0"
+        },
+        "require-dev": {
+            "srag/generateplugininfoshelper": ">=0.1.0"
+        },
+        "time": "2021-03-03T09:55:23+00:00",
+        "type": "library",
+        "extra": {
+            "ilias_plugin": {
+                "ilias_min_version": "5.4.0",
+                "ilias_max_version": "6.999"
+            },
+            "generate_plugin_readme_template": "SRAG_ILIAS_LIBRARY",
+            "long_description_template": "src/LONG_DESCRIPTION.md"
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "srag\\LibraryLanguageInstaller\\M365File\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL-3.0-only"
+        ],
+        "authors": [
+            {
+                "name": "studer + raimann ag - Team Custom 1",
+                "email": "support-custom1@studer-raimann.ch",
+                "homepage": "https://studer-raimann.ch",
+                "role": "Developer"
+            }
+        ],
+        "description": "Install additional and external lang files for a plugin",
+        "homepage": "https://github.com/fluxfw/LibraryLanguageInstaller",
+        "keywords": [
+            "ILIAS",
+            "installer",
+            "language",
+            "library"
+        ]
+    },
+    {
+        "name": "srag/removeplugindataconfirm",
+        "version": "0.7.3",
+        "version_normalized": "0.7.3.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/fluxfw/RemovePluginDataConfirm.git",
+            "reference": "f15f2fa7da7b7f3336bf166c12fc2eaccc5b510c"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/fluxfw/RemovePluginDataConfirm/zipball/f15f2fa7da7b7f3336bf166c12fc2eaccc5b510c",
+            "reference": "f15f2fa7da7b7f3336bf166c12fc2eaccc5b510c",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=7.0",
+            "srag/dic": ">=0.1.0",
+            "srag/librarylanguageinstaller": ">=0.1.0"
+        },
+        "require-dev": {
+            "srag/generateplugininfoshelper": ">=0.1.0"
+        },
+        "time": "2021-03-03T09:54:44+00:00",
+        "type": "library",
+        "extra": {
+            "ilias_plugin": {
+                "ilias_min_version": "5.4.0",
+                "ilias_max_version": "6.999"
+            },
+            "generate_plugin_readme_template": "SRAG_ILIAS_LIBRARY",
+            "long_description_template": "src/LONG_DESCRIPTION.md"
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "srag\\RemovePluginDataConfirm\\M365File\\": "src/"
+            },
+            "classmap": [
+                "src/class.RemovePluginDataConfirmCtrl.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL-3.0-only"
+        ],
+        "authors": [
+            {
+                "name": "studer + raimann ag - Team Custom 1",
+                "email": "support-custom1@studer-raimann.ch",
+                "homepage": "https://studer-raimann.ch",
+                "role": "Developer"
+            }
+        ],
+        "description": "Demand if plugin data should be removed on uninstall",
+        "homepage": "https://github.com/fluxfw/RemovePluginDataConfirm",
+        "keywords": [
+            "ILIAS",
+            "confirm",
+            "data",
+            "plugin",
+            "uninstall"
+        ]
+    }
+]

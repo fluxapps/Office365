@@ -1,0 +1,28 @@
+obj_xmsf#:#M365File
+obj_xmsf_duplicate#:#M365File kopieren
+objs_xmsf#:#M365File's
+objs_xmsf_duplicate#:#M365File's kopieren
+rbac_create_xmsf#:#M365File anlegen
+rep_robj_xmsf_obj_xmsf#:#M365File
+xmsf_add#:#Hinzufügen
+xmsf_delete#:#Löschen
+xmsf_edit_permission#:#Rechte bearbeiten
+xmsf_new#:#M365File anlegen
+xmsf_read#:#Lesen
+xmsf_visible#:#Sichtbar
+xmsf_write#:#Bearbeiten
+config_configuration#:#Konfiguration
+config_configuration_saved#:#Konfiguration gespeichert
+config_save#:#Speichern
+object_manage_contents#:#Bearbeiten
+object_offline#:#Offline
+object_permission_denied#:#Zugriff verweigert
+object_show_contents#:#Inhalte
+object_status#:#Status
+settings_cancel#:#Abbrechen
+settings_description#:#Beschreibung
+settings_online#:#Online
+settings_save#:#Speichern
+settings_saved#:#Einstellungen gespeichert
+settings_settings#:#Einstellungen
+settings_title#:#Titel
