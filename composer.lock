@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "465cc3ec9d7d7a44038dae2b6ac88f4a",
+    "content-hash": "4107df69c0ca89819043298e59ee1745",
     "packages": [
         {
             "name": "guzzlehttp/guzzle",
@@ -274,6 +274,51 @@
                 "single sign on"
             ],
             "time": "2020-10-28T02:03:40+00:00"
+        },
+        {
+            "name": "microsoft/microsoft-graph",
+            "version": "1.29.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/microsoftgraph/msgraph-sdk-php.git",
+                "reference": "e95c2536189996a6ffd3ba191bc9548cb1c59f15"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/microsoftgraph/msgraph-sdk-php/zipball/e95c2536189996a6ffd3ba191bc9548cb1c59f15",
+                "reference": "e95c2536189996a6ffd3ba191bc9548cb1c59f15",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "guzzlehttp/guzzle": "^6.0 || ^7.0",
+                "php": "^8.0 || ^7.1"
+            },
+            "require-dev": {
+                "mikey179/vfsstream": "^1.2",
+                "phpunit/phpunit": "^7.5 || ^8.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Beta\\Microsoft\\Graph\\": "src/Beta/Microsoft/Graph/",
+                    "Microsoft\\Graph\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Microsoft Graph Client Tooling",
+                    "email": "graphtooling@service.microsoft.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "The Microsoft Graph SDK for PHP",
+            "homepage": "https://developer.microsoft.com/en-us/graph",
+            "time": "2021-03-13T01:24:22+00:00"
         },
         {
             "name": "paragonie/random_compat",

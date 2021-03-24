@@ -40,9 +40,7 @@ class ilM365FileConfigGUI extends ilPluginConfigGUI
     public function performCommand(/*string*/ $cmd)/* : void*/
     {
         $this->setTabs();
-        $this->restClient()->test();
         $next_class = self::dic()->ctrl()->getNextClass($this);
-
         switch (strtolower($next_class)) {
             case strtolower(ConfigCtrl::class):
                 self::dic()->ctrl()->forwardCommand(new ConfigCtrl());

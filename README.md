@@ -1,4 +1,4 @@
-# M365File ILIAS Plugin
+# M365File Plugin for ILIAS
 
 Short description
 
@@ -6,12 +6,14 @@ This is an OpenSource project by studer + raimann ag, CH-Burgdorf (https://stude
 
 This project is licensed under the GPL-3.0-only license
 
-## Requirements
+## Getting Started
+
+### Requirements
 
 * ILIAS 5.4.0 - 6.999
 * PHP >=7.0
 
-## Installation
+### Installation
 
 Start at your ILIAS root directory
 
@@ -23,15 +25,8 @@ git clone https://github.com/studer-raimann/M365File.git M365File
 
 Update, activate and config the plugin in the ILIAS Plugin Administration
 
-## Description
-
-Long description
-
-## Adjustment suggestions
-
-You can report bugs or suggestions at https://plugins.studer-raimann.ch/goto.php?target=uihk_srsu_
-
-There is no guarantee this can be fixed or implemented
+### Configuration
+The plugin uses the OAuth2.0 Resource Owner Password Credentials Flow.
 
 ## ILIAS Plugin SLA
 

@@ -5,6 +5,7 @@ namespace srag\Plugins\M365File\M365;
 use srag\Plugins\M365File\Model\APIToken\APITokenRepository;
 use League\OAuth2\Client\Provider\Exception\IdentityProviderException;
 use srag\Plugins\M365File\Utils\M365FileTrait;
+use srag\Plugins\M365File\Model\APIToken\APITokenDTO;
 
 /**
  * Class OAuth2Service
@@ -66,6 +67,16 @@ class OAuth2Service
         }
     }
 
-
+    /**
+     * @return APITokenDTO
+     * @throws IdentityProviderException
+     */
+    public function getAccessToken() : APITokenDTO
+    {
+        if (!$this->isAuthorized()) {
+            $this->authorize();
+        }
+        return $this->token_repository->getToken();
+    }
 
 }

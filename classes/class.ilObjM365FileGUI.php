@@ -2,6 +2,8 @@
 
 use srag\Plugins\M365File\Utils\M365FileTrait;
 use srag\DIC\M365File\DICTrait;
+use Microsoft\Graph\Exception\GraphException;
+use League\OAuth2\Client\Provider\Exception\IdentityProviderException;
 
 /**
  * Class ilObjM365FileGUI
@@ -37,7 +39,7 @@ class ilObjM365FileGUI extends ilObjectPluginGUI
     const TAB_PERMISSIONS = "perm_settings";
     const TAB_SETTINGS = "settings";
     const TAB_SHOW_CONTENTS = "show_contents";
-    const POST_FILE = 'file';
+    const POST_FILE = 'upload_file';
 
     private static $m365_formats = [
         'doc',
@@ -69,18 +71,6 @@ class ilObjM365FileGUI extends ilObjectPluginGUI
             return self::CMD_SHOW_CONTENTS;
         }
     }
-
-
-    /**
-     * @inheritDoc
-     *
-     * @param ilObjM365File $a_new_object
-     */
-    public function afterSave(/*ilObjM365File*/ ilObject $a_new_object)/* : void*/
-    {
-        parent::afterSave($a_new_object);
-    }
-
 
     /**
      * @inheritDoc
@@ -116,7 +106,7 @@ class ilObjM365FileGUI extends ilObjectPluginGUI
     {
         $form = parent::initCreateForm($a_new_type);
 
-        $file_input = new ilDragDropFileInputGUI($this->plugin->txt('creation_file_input'), self::POST_FILE);
+        $file_input = new ilFileInputGUI($this->plugin->txt('creation_file_input'), self::POST_FILE);
         $file_input->setSuffixes(self::$m365_formats);
         $file_input->setRequired(true);
         $form->addItem($file_input);
@@ -124,15 +114,41 @@ class ilObjM365FileGUI extends ilObjectPluginGUI
         return $form;
     }
 
+
     public function save()
     {
         $form = $this->initCreateForm($this->getType());
         $form->setValuesByPost();
         $form->checkInput();
-
+        /** @var array $file */
         $file = $form->getInput(self::POST_FILE);
+        if ($file['error'] > 0) {
+            throw new ilException("file upload failed with error code " . $file['error']);
+        }
+        parent::save();
+        // we create the sharepoint folder & file in afterSave, because we need a ref_id
+    }
 
-
+    /**
+     * @inheritDoc
+     * @param ilObject $a_new_object
+     * @throws IdentityProviderException
+     * @throws GraphException
+     */
+    public function afterSave(/*ilObjM365File*/ ilObject $a_new_object)/* : void*/
+    {
+        $form = $this->initCreateForm($this->getType());
+        $form->setValuesByPost();
+        $form->checkInput();
+        /** @var array $file */
+        $file = $form->getInput(self::POST_FILE);
+        $this->restClient()->createFolder($a_new_object->getRefId());
+        $this->restClient()->uploadFile(
+            $file['tmp_name'],
+            $file['name'],
+            $a_new_object->getRefId()
+        );
+        parent::afterSave($a_new_object);
     }
 
     /**
@@ -296,4 +312,10 @@ class ilObjM365FileGUI extends ilObjectPluginGUI
         // TODO: Implement showContents
         $this->show("");
     }
+
+    protected function supportsCloning()
+    {
+        return false;
+    }
+
 }
