@@ -118,4 +118,12 @@ class ilObjM365File extends ilObjectPlugin
 
         self::m365File()->objectSettings()->storeObjectSettings($new_obj->object_settings);
     }
+
+    /**
+     * @return ObjectSettings|null
+     */
+    public function getObjectSettings() : ObjectSettings
+    {
+        return $this->object_settings;
+    }
 }

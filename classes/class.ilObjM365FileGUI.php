@@ -142,11 +142,16 @@ class ilObjM365FileGUI extends ilObjectPluginGUI
         $form->checkInput();
         /** @var array $file */
         $file = $form->getInput(self::POST_FILE);
-        $this->restClient()->createFolder($a_new_object->getRefId());
-        $this->restClient()->uploadFile(
+        self::restClient()->createFolder($a_new_object->getRefId());
+        $file = $this->restClient()->uploadFile(
             $file['tmp_name'],
             $file['name'],
             $a_new_object->getRefId()
+        );
+        $settings = self::m365File()->objectSettings()->getObjectSettingsById($a_new_object->getId());
+        $settings->setSharingLink(self::restClient()->createSharingLink($file->getBody()['id']));
+        self::m365File()->objectSettings()->storeObjectSettings(
+            $settings
         );
         parent::afterSave($a_new_object);
     }
@@ -220,8 +225,7 @@ class ilObjM365FileGUI extends ilObjectPluginGUI
      */
     protected function setTabs()/* : void*/
     {
-        self::dic()->tabs()->addTab(self::TAB_SHOW_CONTENTS, self::plugin()->translate("show_contents", self::LANG_MODULE_OBJECT), self::dic()->ctrl()
-            ->getLinkTarget($this, self::CMD_SHOW_CONTENTS));
+        self::dic()->tabs()->addTab(self::TAB_SHOW_CONTENTS, self::plugin()->translate("show_contents", self::LANG_MODULE_OBJECT), $this->object->getObjectSettings()->getSharingLink());
 
         if (ilObjM365FileAccess::hasWriteAccess()) {
             self::dic()->tabs()->addTab(self::TAB_CONTENTS, self::plugin()->translate("manage_contents", self::LANG_MODULE_OBJECT), self::dic()

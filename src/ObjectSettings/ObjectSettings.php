@@ -46,6 +46,14 @@ class ObjectSettings extends ActiveRecord
      */
     protected $obj_id;
 
+    /**
+     * @var string
+     * @con_has_field    true
+     * @con_fieldtype    text
+     * @con_length       512
+     */
+    protected $sharing_link;
+
 
     /**
      * ObjectSettings constructor
@@ -112,6 +120,22 @@ class ObjectSettings extends ActiveRecord
     public function setOnline(bool $is_online = true)/* : void*/
     {
         $this->is_online = $is_online;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSharingLink() : string
+    {
+        return $this->sharing_link;
+    }
+
+    /**
+     * @param string $sharing_link
+     */
+    public function setSharingLink(string $sharing_link)
+    {
+        $this->sharing_link = $sharing_link;
     }
 
 

@@ -50,8 +50,7 @@ class RESTClient
                         "name" => $name,
                         "folder" => new stdClass(),
                         "@microsoft.graph.conflictBehavior" => "fail"
-                    ])
-                    ->execute();
+                    ])->execute();
     }
 
     /**
@@ -65,14 +64,25 @@ class RESTClient
     public function uploadFile(string $file_path, string $file_name, string $target_path) : GraphResponse
     {
         $this->log()->info("creating file with name '$file_name' in parent directory '$target_path'");
+        // TODO: test files > 4MB
         return $this->getGraph()
-            ->createRequest("PUT", self::BASE_URL . "/root:/{$target_path}/{$file_name}:/content")
-            ->attachBody([
-                "name" => $file_name,
-                "file" => new stdClass(),
-                "@microsoft.graph.conflictBehavior" => "fail"
-            ])
-            ->upload($file_path);
+                    ->createRequest("PUT", self::BASE_URL . "/root:/{$target_path}/{$file_name}:/content")
+                    ->attachBody([
+                        "name" => $file_name,
+                        "file" => new stdClass(),
+                        "@microsoft.graph.conflictBehavior" => "fail"
+                    ])->upload($file_path);
+    }
+
+    public function createSharingLink(string $item_id) : string
+    {
+        return $this->getGraph()
+                    ->createRequest("POST", self::BASE_URL . "/{$item_id}/createLink")
+                    ->attachBody([
+                        "type" => "edit",
+                        "scope" => "organization"
+                    ])->execute()
+                    ->getBody()["link"]["webUrl"];
     }
 
     /**
