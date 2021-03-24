@@ -37,6 +37,21 @@ class ilObjM365FileGUI extends ilObjectPluginGUI
     const TAB_PERMISSIONS = "perm_settings";
     const TAB_SETTINGS = "settings";
     const TAB_SHOW_CONTENTS = "show_contents";
+    const POST_FILE = 'file';
+
+    private static $m365_formats = [
+        'doc',
+        'docx',
+        'dot',
+        'dotx',
+        'xls',
+        'xlsx',
+        'xlt',
+        'xltx',
+        'ppt',
+        'pptx',
+    ];
+
     /**
      * @var ilObjM365File
      */
@@ -101,9 +116,24 @@ class ilObjM365FileGUI extends ilObjectPluginGUI
     {
         $form = parent::initCreateForm($a_new_type);
 
+        $file_input = new ilDragDropFileInputGUI($this->plugin->txt('creation_file_input'), self::POST_FILE);
+        $file_input->setSuffixes(self::$m365_formats);
+        $file_input->setRequired(true);
+        $form->addItem($file_input);
+
         return $form;
     }
 
+    public function save()
+    {
+        $form = $this->initCreateForm($this->getType());
+        $form->setValuesByPost();
+        $form->checkInput();
+
+        $file = $form->getInput(self::POST_FILE);
+
+
+    }
 
     /**
      * @param string $cmd

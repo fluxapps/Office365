@@ -70,7 +70,13 @@ final class Repository extends AbstractRepository
     protected function getFields() : array
     {
         return [
-            FormBuilder::KEY_SOME => Config::TYPE_STRING
+            FormBuilder::KEY_TENANT_NAME => Config::TYPE_STRING,
+            FormBuilder::KEY_TENANT_ID => Config::TYPE_STRING,
+            FormBuilder::KEY_CLIENT_ID => Config::TYPE_STRING,
+            FormBuilder::KEY_CLIENT_SECRET => Config::TYPE_STRING,
+            FormBuilder::KEY_USERNAME => Config::TYPE_STRING,
+            FormBuilder::KEY_PASSWORD => Config::TYPE_STRING,
+            FormBuilder::KEY_TOKEN => Config::TYPE_STRING,
         ];
     }
 

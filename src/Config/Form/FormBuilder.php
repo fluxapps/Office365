@@ -20,9 +20,14 @@ class FormBuilder extends AbstractFormBuilder
 
     use M365FileTrait;
 
-    const KEY_SOME = "some";
+    const KEY_TENANT_NAME = "tenant_name";
+    const KEY_TENANT_ID = "tenant_id";
+    const KEY_CLIENT_ID = "client_id";
+    const KEY_CLIENT_SECRET = "client_secret";
+    const KEY_USERNAME = "username";
+    const KEY_PASSWORD = "password";
     const PLUGIN_CLASS_NAME = ilM365FilePlugin::class;
-
+    const KEY_TOKEN = "token";
 
     /**
      * @inheritDoc
@@ -54,7 +59,12 @@ class FormBuilder extends AbstractFormBuilder
     protected function getData() : array
     {
         $data = [
-            self::KEY_SOME => self::m365File()->config()->getValue(self::KEY_SOME)
+            self::KEY_TENANT_NAME => self::m365File()->config()->getValue(self::KEY_TENANT_NAME),
+            self::KEY_TENANT_ID => self::m365File()->config()->getValue(self::KEY_TENANT_ID),
+            self::KEY_CLIENT_ID => self::m365File()->config()->getValue(self::KEY_CLIENT_ID),
+            self::KEY_CLIENT_SECRET => self::m365File()->config()->getValue(self::KEY_CLIENT_SECRET),
+            self::KEY_USERNAME => self::m365File()->config()->getValue(self::KEY_USERNAME),
+            self::KEY_PASSWORD => self::m365File()->config()->getValue(self::KEY_PASSWORD),
         ];
 
         return $data;
@@ -67,7 +77,18 @@ class FormBuilder extends AbstractFormBuilder
     protected function getFields() : array
     {
         $fields = [
-            self::KEY_SOME => self::dic()->ui()->factory()->input()->field()->text(self::plugin()->translate(self::KEY_SOME, ConfigCtrl::LANG_MODULE))->withRequired(true)
+            self::KEY_TENANT_NAME => self::dic()->ui()->factory()->input()->field()->text(self::plugin()->translate(self::KEY_TENANT_NAME,
+                ConfigCtrl::LANG_MODULE))->withRequired(true),
+            self::KEY_TENANT_ID => self::dic()->ui()->factory()->input()->field()->text(self::plugin()->translate(self::KEY_TENANT_ID,
+                ConfigCtrl::LANG_MODULE))->withRequired(true),
+            self::KEY_CLIENT_ID => self::dic()->ui()->factory()->input()->field()->text(self::plugin()->translate(self::KEY_CLIENT_ID,
+                ConfigCtrl::LANG_MODULE))->withRequired(true),
+            self::KEY_CLIENT_SECRET => self::dic()->ui()->factory()->input()->field()->text(self::plugin()->translate(self::KEY_CLIENT_SECRET,
+                ConfigCtrl::LANG_MODULE))->withRequired(true),
+            self::KEY_USERNAME => self::dic()->ui()->factory()->input()->field()->text(self::plugin()->translate(self::KEY_USERNAME,
+                ConfigCtrl::LANG_MODULE))->withRequired(true),
+            self::KEY_PASSWORD => self::dic()->ui()->factory()->input()->field()->text(self::plugin()->translate(self::KEY_PASSWORD,
+                ConfigCtrl::LANG_MODULE))->withRequired(true),
         ];
 
         return $fields;
@@ -88,6 +109,11 @@ class FormBuilder extends AbstractFormBuilder
      */
     protected function storeData(array $data)/* : void*/
     {
-        self::m365File()->config()->setValue(self::KEY_SOME, strval($data[self::KEY_SOME]));
+        self::m365File()->config()->setValue(self::KEY_TENANT_NAME, strval($data[self::KEY_TENANT_NAME]));
+        self::m365File()->config()->setValue(self::KEY_TENANT_ID, strval($data[self::KEY_TENANT_ID]));
+        self::m365File()->config()->setValue(self::KEY_CLIENT_ID, strval($data[self::KEY_CLIENT_ID]));
+        self::m365File()->config()->setValue(self::KEY_CLIENT_SECRET, strval($data[self::KEY_CLIENT_SECRET]));
+        self::m365File()->config()->setValue(self::KEY_USERNAME, strval($data[self::KEY_USERNAME]));
+        self::m365File()->config()->setValue(self::KEY_PASSWORD, strval($data[self::KEY_PASSWORD]));
     }
 }

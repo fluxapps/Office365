@@ -3,6 +3,14 @@
 namespace srag\Plugins\M365File\Utils;
 
 use srag\Plugins\M365File\Repository;
+use srag\Plugins\M365File\Config\Repository as ConfigRepository;
+use srag\Plugins\M365File\M365\RESTClient;
+use srag\Plugins\M365File\M365\OAuth2Service;
+use srag\Plugins\M365File\M365\OAuth2Client;
+use srag\Plugins\M365File\Model\APIToken\APITokenRepository as APITokenRepository;
+use ILIAS\DI\LoggingServices;
+use ilLogger;
+use Monolog\Logger;
 
 /**
  * Trait M365FileTrait
@@ -23,5 +31,26 @@ trait M365FileTrait
     protected static function m365File() : Repository
     {
         return Repository::getInstance();
+    }
+
+    protected static function config() : ConfigRepository
+    {
+        return ConfigRepository::getInstance();
+    }
+
+    protected static function restClient() : RESTClient
+    {
+        return new RESTClient(
+            new OAuth2Service(
+                new OAuth2Client(),
+                new APITokenRepository()
+            )
+        );
+    }
+
+    protected static function log() : Logger
+    {
+        global $DIC;
+        return $DIC->logger()->root()->getLogger()->withName('M365File');
     }
 }
