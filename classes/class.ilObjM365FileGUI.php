@@ -225,12 +225,9 @@ class ilObjM365FileGUI extends ilObjectPluginGUI
      */
     protected function setTabs()/* : void*/
     {
-        self::dic()->tabs()->addTab(self::TAB_SHOW_CONTENTS, self::plugin()->translate("show_contents", self::LANG_MODULE_OBJECT), $this->object->getObjectSettings()->getSharingLink());
+        self::dic()->tabs()->addTab(self::TAB_SHOW_CONTENTS, self::plugin()->translate("show_contents", self::LANG_MODULE_OBJECT), $this->object->getObjectSettings()->getSharingLink(), 'top');
 
         if (ilObjM365FileAccess::hasWriteAccess()) {
-            self::dic()->tabs()->addTab(self::TAB_CONTENTS, self::plugin()->translate("manage_contents", self::LANG_MODULE_OBJECT), self::dic()
-                ->ctrl()->getLinkTarget($this, self::CMD_MANAGE_CONTENTS));
-
             self::dic()->tabs()->addTab(self::TAB_SETTINGS, self::plugin()->translate("settings", self::LANG_MODULE_SETTINGS), self::dic()->ctrl()
                 ->getLinkTarget($this, self::CMD_SETTINGS));
         }
@@ -311,10 +308,7 @@ class ilObjM365FileGUI extends ilObjectPluginGUI
      */
     protected function showContents()/* : void*/
     {
-        self::dic()->tabs()->activateTab(self::TAB_SHOW_CONTENTS);
-
-        // TODO: Implement showContents
-        $this->show("");
+        self::dic()->ctrl()->redirectToURL($this->object->getObjectSettings()->getSharingLink());
     }
 
     protected function supportsCloning()

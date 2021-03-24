@@ -17,7 +17,7 @@ config_save#:#Speichern
 object_manage_contents#:#Bearbeiten
 object_offline#:#Offline
 object_permission_denied#:#Zugriff verweigert
-object_show_contents#:#Inhalte
+object_show_contents#:#In M365 öffnen
 object_status#:#Status
 settings_cancel#:#Abbrechen
 settings_description#:#Beschreibung
