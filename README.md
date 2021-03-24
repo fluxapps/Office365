@@ -43,9 +43,9 @@ To allow the plugin to authenticate and authorize against the Microsoft API, an 
 The plugin uses the OAuth2.0 Resource Owner Password Credentials Flow. That means the plugin will send requests on behalf of a user without any interaction of this user (not even for authentication). Therefore the plugin requires the credentials (login and password) of such a user. All files and folders created by the plugin will be stored in this user's drive, which means that the user needs to have a personal drive in Sharepoint/OneDrive.
 
 This leads to the following plugin configuration:
-* *Tenant ID*: see [Microsoft Azue](#microsoft-azure)
-* *Client ID*: see [Microsoft Azue](#microsoft-azure)
-* *Client Secret*: see [Microsoft Azue](#microsoft-azure)
+* *Tenant ID*: see [Microsoft Azure](#microsoft-azure)
+* *Client ID*: see [Microsoft Azure](#microsoft-azure)
+* *Client Secret*: see [Microsoft Azure](#microsoft-azure)
 * *Username*: name of aforementioned user
 * *Password*: password of aforementioned user
 
