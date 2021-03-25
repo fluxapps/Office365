@@ -6,13 +6,13 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'srag\\RemovePluginDataConfirm\\' => array($vendorDir . '/srag/removeplugindataconfirm/src'),
+    'srag\\RemovePluginDataConfirm\\M365File\\' => array($vendorDir . '/srag/removeplugindataconfirm/src'),
     'srag\\Plugins\\M365File\\' => array($baseDir . '/src'),
-    'srag\\LibraryLanguageInstaller\\' => array($vendorDir . '/srag/librarylanguageinstaller/src'),
+    'srag\\LibraryLanguageInstaller\\M365File\\' => array($vendorDir . '/srag/librarylanguageinstaller/src'),
     'srag\\LibrariesNamespaceChanger\\' => array($vendorDir . '/srag/librariesnamespacechanger/src'),
-    'srag\\DIC\\' => array($vendorDir . '/srag/dic/src'),
-    'srag\\CustomInputGUIs\\' => array($vendorDir . '/srag/custominputguis/src'),
-    'srag\\ActiveRecordConfig\\' => array($vendorDir . '/srag/activerecordconfig/src'),
+    'srag\\DIC\\M365File\\' => array($vendorDir . '/srag/dic/src'),
+    'srag\\CustomInputGUIs\\M365File\\' => array($vendorDir . '/srag/custominputguis/src'),
+    'srag\\ActiveRecordConfig\\M365File\\' => array($vendorDir . '/srag/activerecordconfig/src'),
     'Symfony\\Polyfill\\Php72\\' => array($vendorDir . '/symfony/polyfill-php72'),
     'Symfony\\Polyfill\\Intl\\Normalizer\\' => array($vendorDir . '/symfony/polyfill-intl-normalizer'),
     'Symfony\\Polyfill\\Intl\\Idn\\' => array($vendorDir . '/symfony/polyfill-intl-idn'),

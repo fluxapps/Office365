@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit0b1d394ef10e8a3f72c2ed963dadc826
+class ComposerStaticInit54dad0602e28533780fabd72c309026d
 {
     public static $files = array (
         '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
@@ -19,13 +19,13 @@ class ComposerStaticInit0b1d394ef10e8a3f72c2ed963dadc826
     public static $prefixLengthsPsr4 = array (
         's' => 
         array (
-            'srag\\RemovePluginDataConfirm\\' => 29,
+            'srag\\RemovePluginDataConfirm\\M365File\\' => 38,
             'srag\\Plugins\\M365File\\' => 22,
-            'srag\\LibraryLanguageInstaller\\' => 30,
+            'srag\\LibraryLanguageInstaller\\M365File\\' => 39,
             'srag\\LibrariesNamespaceChanger\\' => 31,
-            'srag\\DIC\\' => 9,
-            'srag\\CustomInputGUIs\\' => 21,
-            'srag\\ActiveRecordConfig\\' => 24,
+            'srag\\DIC\\M365File\\' => 18,
+            'srag\\CustomInputGUIs\\M365File\\' => 30,
+            'srag\\ActiveRecordConfig\\M365File\\' => 33,
         ),
         'S' => 
         array (
@@ -58,7 +58,7 @@ class ComposerStaticInit0b1d394ef10e8a3f72c2ed963dadc826
     );
 
     public static $prefixDirsPsr4 = array (
-        'srag\\RemovePluginDataConfirm\\' => 
+        'srag\\RemovePluginDataConfirm\\M365File\\' => 
         array (
             0 => __DIR__ . '/..' . '/srag/removeplugindataconfirm/src',
         ),
@@ -66,7 +66,7 @@ class ComposerStaticInit0b1d394ef10e8a3f72c2ed963dadc826
         array (
             0 => __DIR__ . '/../..' . '/src',
         ),
-        'srag\\LibraryLanguageInstaller\\' => 
+        'srag\\LibraryLanguageInstaller\\M365File\\' => 
         array (
             0 => __DIR__ . '/..' . '/srag/librarylanguageinstaller/src',
         ),
@@ -74,15 +74,15 @@ class ComposerStaticInit0b1d394ef10e8a3f72c2ed963dadc826
         array (
             0 => __DIR__ . '/..' . '/srag/librariesnamespacechanger/src',
         ),
-        'srag\\DIC\\' => 
+        'srag\\DIC\\M365File\\' => 
         array (
             0 => __DIR__ . '/..' . '/srag/dic/src',
         ),
-        'srag\\CustomInputGUIs\\' => 
+        'srag\\CustomInputGUIs\\M365File\\' => 
         array (
             0 => __DIR__ . '/..' . '/srag/custominputguis/src',
         ),
-        'srag\\ActiveRecordConfig\\' => 
+        'srag\\ActiveRecordConfig\\M365File\\' => 
         array (
             0 => __DIR__ . '/..' . '/srag/activerecordconfig/src',
         ),
@@ -4736,9 +4736,9 @@ class ComposerStaticInit0b1d394ef10e8a3f72c2ed963dadc826
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit0b1d394ef10e8a3f72c2ed963dadc826::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit0b1d394ef10e8a3f72c2ed963dadc826::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit0b1d394ef10e8a3f72c2ed963dadc826::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit54dad0602e28533780fabd72c309026d::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit54dad0602e28533780fabd72c309026d::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit54dad0602e28533780fabd72c309026d::$classMap;
 
         }, null, ClassLoader::class);
     }
