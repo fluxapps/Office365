@@ -21,6 +21,7 @@
   },
   "require": {
     "php": ">=7.0",
+    "guzzlehttp/guzzle": "6.5.5",
     "league/oauth2-client": "^2.6",
     "microsoft/microsoft-graph": "^1.29",
     "srag/activerecordconfig": ">=0.1.0",
