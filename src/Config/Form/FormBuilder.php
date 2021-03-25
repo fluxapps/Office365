@@ -114,6 +114,6 @@ class FormBuilder extends AbstractFormBuilder
         self::m365File()->config()->setValue(self::KEY_CLIENT_ID, strval($data[self::KEY_CLIENT_ID]));
         self::m365File()->config()->setValue(self::KEY_CLIENT_SECRET, strval($data[self::KEY_CLIENT_SECRET]));
         self::m365File()->config()->setValue(self::KEY_USERNAME, strval($data[self::KEY_USERNAME]));
-        self::m365File()->config()->setValue(self::KEY_PASSWORD, strval($data[self::KEY_PASSWORD]));
+        self::m365File()->config()->setValue(self::KEY_PASSWORD, $data[self::KEY_PASSWORD]->toString());
     }
 }
