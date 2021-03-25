@@ -87,7 +87,7 @@ class FormBuilder extends AbstractFormBuilder
                 ConfigCtrl::LANG_MODULE))->withRequired(true),
             self::KEY_USERNAME => self::dic()->ui()->factory()->input()->field()->text(self::plugin()->translate(self::KEY_USERNAME,
                 ConfigCtrl::LANG_MODULE))->withRequired(true),
-            self::KEY_PASSWORD => self::dic()->ui()->factory()->input()->field()->text(self::plugin()->translate(self::KEY_PASSWORD,
+            self::KEY_PASSWORD => self::dic()->ui()->factory()->input()->field()->password(self::plugin()->translate(self::KEY_PASSWORD,
                 ConfigCtrl::LANG_MODULE))->withRequired(true),
         ];
 

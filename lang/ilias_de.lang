@@ -26,4 +26,11 @@ settings_save#:#Speichern
 settings_saved#:#Einstellungen gespeichert
 settings_settings#:#Einstellungen
 settings_title#:#Titel
+settings_sharing_type#:#Sharing-Typ
+settings_sharing_type_info#:#Hier kann definiert werden, wer Zugriffsrechte zum Bearbeiten des Dokuments in M365 hat (via Direktlink).
+settings_sharing_type_restricted#:#Auf Nutzer mit Leserechten eingeschränkt
+settings_sharing_type_organization#:#Auf Nutzer mit Organisationszugehörigkeit eingeschränkt
+settings_sharing_type_anonymous#:#Öffentlich zugänglich
+settings_expiration#:#Gültigkeitsdauer (in Minuten)
+settings_expiration_info#:#Links auf das Dokument werden nach dieser Dauer ungültig. Danach wird automatisch ein neuer, gültiger Link generiert. Wird hier nichts (oder 0) angegeben, bleiben Links dauerhaft gültig.
 creation_file_input#:#Datei

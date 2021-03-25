@@ -26,4 +26,11 @@ settings_save#:#Save
 settings_saved#:#Settings saved
 settings_settings#:#Settings
 settings_title#:#Title
+settings_sharing_type#:#Sharing Type
+settings_sharing_type_info#:#Define which users (with a direct link) have permissions to edit the document in M365.
+settings_sharing_type_restricted#:#Restrict to users with read permissions
+settings_sharing_type_organization#:#Restrict to users of organization
+settings_sharing_type_anonymous#:#No restriction (accessible for anyone with the link)
+settings_expiration#:#Expiration (in minutes)
+settings_expiration_info#:#Links to the document will expire after this duration. A new link will be generated automatically. Enter nothing (or 0) to disable expiration of the link.
 creation_file_input#:#File

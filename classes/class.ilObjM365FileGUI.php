@@ -66,7 +66,7 @@ class ilObjM365FileGUI extends ilObjectPluginGUI
     public static function getStartCmd() : string
     {
         if (ilObjM365FileAccess::hasWriteAccess()) {
-            return self::CMD_MANAGE_CONTENTS;
+            return self::CMD_SETTINGS;
         } else {
             return self::CMD_SHOW_CONTENTS;
         }

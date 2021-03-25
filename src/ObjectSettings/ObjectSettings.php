@@ -45,7 +45,6 @@ class ObjectSettings extends ActiveRecord
      * @con_is_primary   true
      */
     protected $obj_id;
-
     /**
      * @var string
      * @con_has_field    true
