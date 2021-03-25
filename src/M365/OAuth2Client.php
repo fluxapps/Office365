@@ -20,8 +20,7 @@ class OAuth2Client
     const LOGIN_URL = 'https://login.microsoftonline.com/';
     protected static $scopes = [
         'offline_access',
-        'Files.ReadWrite.All',
-        'Files.ReadWrite.AppFolder'
+        'Files.ReadWrite.All'
     ];
 
     /**
