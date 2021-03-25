@@ -83,7 +83,7 @@ class FormBuilder extends AbstractFormBuilder
                 ConfigCtrl::LANG_MODULE))->withRequired(true),
             self::KEY_CLIENT_ID => self::dic()->ui()->factory()->input()->field()->text(self::plugin()->translate(self::KEY_CLIENT_ID,
                 ConfigCtrl::LANG_MODULE))->withRequired(true),
-            self::KEY_CLIENT_SECRET => self::dic()->ui()->factory()->input()->field()->text(self::plugin()->translate(self::KEY_CLIENT_SECRET,
+            self::KEY_CLIENT_SECRET => self::dic()->ui()->factory()->input()->field()->password(self::plugin()->translate(self::KEY_CLIENT_SECRET,
                 ConfigCtrl::LANG_MODULE))->withRequired(true),
             self::KEY_USERNAME => self::dic()->ui()->factory()->input()->field()->text(self::plugin()->translate(self::KEY_USERNAME,
                 ConfigCtrl::LANG_MODULE))->withRequired(true),
@@ -112,7 +112,7 @@ class FormBuilder extends AbstractFormBuilder
         self::m365File()->config()->setValue(self::KEY_TENANT_NAME, strval($data[self::KEY_TENANT_NAME]));
         self::m365File()->config()->setValue(self::KEY_TENANT_ID, strval($data[self::KEY_TENANT_ID]));
         self::m365File()->config()->setValue(self::KEY_CLIENT_ID, strval($data[self::KEY_CLIENT_ID]));
-        self::m365File()->config()->setValue(self::KEY_CLIENT_SECRET, strval($data[self::KEY_CLIENT_SECRET]));
+        self::m365File()->config()->setValue(self::KEY_CLIENT_SECRET, $data[self::KEY_CLIENT_SECRET]->toString());
         self::m365File()->config()->setValue(self::KEY_USERNAME, strval($data[self::KEY_USERNAME]));
         self::m365File()->config()->setValue(self::KEY_PASSWORD, $data[self::KEY_PASSWORD]->toString());
     }
