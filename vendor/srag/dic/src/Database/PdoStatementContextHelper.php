@@ -12,8 +12,6 @@ use srag\DIC\M365File\Exception\DICException;
  *
  * @package srag\DIC\M365File\Database
  *
- * @author  studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
- *
  * @internal
  */
 final class PdoStatementContextHelper extends ilPDOStatement

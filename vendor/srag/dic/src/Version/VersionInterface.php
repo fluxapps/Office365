@@ -6,8 +6,6 @@ namespace srag\DIC\M365File\Version;
  * Interface VersionInterface
  *
  * @package srag\DIC\M365File\Version
- *
- * @author  studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
  */
 interface VersionInterface
 {

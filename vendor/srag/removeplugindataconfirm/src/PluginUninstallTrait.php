@@ -6,8 +6,6 @@ namespace srag\RemovePluginDataConfirm\M365File;
  * Trait PluginUninstallTrait
  *
  * @package srag\RemovePluginDataConfirm\M365File
- *
- * @author  studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
  */
 trait PluginUninstallTrait
 {

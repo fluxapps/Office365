@@ -12,8 +12,6 @@ use srag\DIC\M365File\Version\PluginVersionParameter;
  * Class AjaxCheckbox
  *
  * @package srag\CustomInputGUIs\M365File\AjaxCheckbox
- *
- * @author  studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
  */
 class AjaxCheckbox
 {

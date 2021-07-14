@@ -19,8 +19,6 @@ use srag\DIC\M365File\DICTrait;
  *
  * @package    srag\CustomInputGUIs\M365File\TableGUI
  *
- * @author     studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
- *
  * @deprecated Please use "srag/datatable" library (`AbstractTableBuilder`)
  */
 abstract class TableGUI extends ilTable2GUI

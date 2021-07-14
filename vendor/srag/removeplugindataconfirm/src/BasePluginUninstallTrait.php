@@ -11,8 +11,6 @@ use srag\LibraryLanguageInstaller\M365File\LibraryLanguageInstaller;
  *
  * @package srag\RemovePluginDataConfirm\M365File
  *
- * @author  studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
- *
  * @access  namespace
  */
 trait BasePluginUninstallTrait

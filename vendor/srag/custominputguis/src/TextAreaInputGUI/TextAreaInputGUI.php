@@ -10,9 +10,6 @@ use srag\DIC\M365File\DICTrait;
  * Class TextAreaInputGUI
  *
  * @package srag\CustomInputGUIs\M365File\TextAreaInputGUI
- *
- * @author  studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
- * @author  Fabian Schmid <fs@studer-raimann.ch>
  */
 class TextAreaInputGUI extends ilTextAreaInputGUI
 {

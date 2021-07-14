@@ -8,8 +8,6 @@ use ilTemplate;
  * Trait FixUITemplateInCronContext
  *
  * @package srag\DIC\M365File\Cron
- *
- * @author  studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
  */
 trait FixUITemplateInCronContext
 {

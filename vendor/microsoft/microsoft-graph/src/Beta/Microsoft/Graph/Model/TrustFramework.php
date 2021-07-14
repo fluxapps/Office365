@@ -28,7 +28,7 @@ class TrustFramework implements \JsonSerializable
     * The array of properties available
     * to the model
     *
-    * @var array(string => string)
+    * @var array $_propDict
     */
     protected $_propDict;
     
@@ -39,7 +39,10 @@ class TrustFramework implements \JsonSerializable
     */
     function __construct($propDict = array())
     {
-		$this->_propDict = $propDict;
+        if (!is_array($propDict)) {
+           $propDict = array();
+        }
+        $this->_propDict = $propDict;
     }
 
     /**
@@ -56,7 +59,7 @@ class TrustFramework implements \JsonSerializable
      /** 
      * Gets the keySets
      *
-     * @return array The keySets
+     * @return array|null The keySets
      */
     public function getKeySets()
     {
@@ -76,7 +79,7 @@ class TrustFramework implements \JsonSerializable
     */
     public function setKeySets($val)
     {
-		$this->_propDict["keySets"] = $val;
+        $this->_propDict["keySets"] = $val;
         return $this;
     }
     
@@ -84,7 +87,7 @@ class TrustFramework implements \JsonSerializable
      /** 
      * Gets the policies
      *
-     * @return array The policies
+     * @return array|null The policies
      */
     public function getPolicies()
     {
@@ -104,7 +107,7 @@ class TrustFramework implements \JsonSerializable
     */
     public function setPolicies($val)
     {
-		$this->_propDict["policies"] = $val;
+        $this->_propDict["policies"] = $val;
         return $this;
     }
     
@@ -121,9 +124,9 @@ class TrustFramework implements \JsonSerializable
     /**
     * Sets the ODataType
     *
-    * @param string The ODataType
+    * @param string $val The ODataType
     *
-    * @return Entity
+    * @return TrustFramework
     */
     public function setODataType($val)
     {
@@ -133,7 +136,7 @@ class TrustFramework implements \JsonSerializable
     
     /**
     * Serializes the object by property array
-	* Manually serialize DateTime into RFC3339 format
+    * Manually serialize DateTime into RFC3339 format
     *
     * @return array The list of properties
     */

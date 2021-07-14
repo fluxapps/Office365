@@ -27,12 +27,12 @@ class PolicyRoot extends Entity
     /**
     * Gets the authenticationMethodsPolicy
     *
-    * @return AuthenticationMethodsPolicy The authenticationMethodsPolicy
+    * @return AuthenticationMethodsPolicy|null The authenticationMethodsPolicy
     */
     public function getAuthenticationMethodsPolicy()
     {
         if (array_key_exists("authenticationMethodsPolicy", $this->_propDict)) {
-            if (is_a($this->_propDict["authenticationMethodsPolicy"], "Microsoft\Graph\Model\AuthenticationMethodsPolicy")) {
+            if (is_a($this->_propDict["authenticationMethodsPolicy"], "\Microsoft\Graph\Model\AuthenticationMethodsPolicy") || is_null($this->_propDict["authenticationMethodsPolicy"])) {
                 return $this->_propDict["authenticationMethodsPolicy"];
             } else {
                 $this->_propDict["authenticationMethodsPolicy"] = new AuthenticationMethodsPolicy($this->_propDict["authenticationMethodsPolicy"]);
@@ -55,11 +55,42 @@ class PolicyRoot extends Entity
         return $this;
     }
     
+    /**
+    * Gets the authenticationFlowsPolicy
+    *
+    * @return AuthenticationFlowsPolicy|null The authenticationFlowsPolicy
+    */
+    public function getAuthenticationFlowsPolicy()
+    {
+        if (array_key_exists("authenticationFlowsPolicy", $this->_propDict)) {
+            if (is_a($this->_propDict["authenticationFlowsPolicy"], "\Microsoft\Graph\Model\AuthenticationFlowsPolicy") || is_null($this->_propDict["authenticationFlowsPolicy"])) {
+                return $this->_propDict["authenticationFlowsPolicy"];
+            } else {
+                $this->_propDict["authenticationFlowsPolicy"] = new AuthenticationFlowsPolicy($this->_propDict["authenticationFlowsPolicy"]);
+                return $this->_propDict["authenticationFlowsPolicy"];
+            }
+        }
+        return null;
+    }
+    
+    /**
+    * Sets the authenticationFlowsPolicy
+    *
+    * @param AuthenticationFlowsPolicy $val The authenticationFlowsPolicy
+    *
+    * @return PolicyRoot
+    */
+    public function setAuthenticationFlowsPolicy($val)
+    {
+        $this->_propDict["authenticationFlowsPolicy"] = $val;
+        return $this;
+    }
+    
 
      /** 
      * Gets the activityBasedTimeoutPolicies
      *
-     * @return array The activityBasedTimeoutPolicies
+     * @return array|null The activityBasedTimeoutPolicies
      */
     public function getActivityBasedTimeoutPolicies()
     {
@@ -79,19 +110,19 @@ class PolicyRoot extends Entity
     */
     public function setActivityBasedTimeoutPolicies($val)
     {
-		$this->_propDict["activityBasedTimeoutPolicies"] = $val;
+        $this->_propDict["activityBasedTimeoutPolicies"] = $val;
         return $this;
     }
     
     /**
     * Gets the authorizationPolicy
     *
-    * @return AuthorizationPolicy The authorizationPolicy
+    * @return AuthorizationPolicy|null The authorizationPolicy
     */
     public function getAuthorizationPolicy()
     {
         if (array_key_exists("authorizationPolicy", $this->_propDict)) {
-            if (is_a($this->_propDict["authorizationPolicy"], "Microsoft\Graph\Model\AuthorizationPolicy")) {
+            if (is_a($this->_propDict["authorizationPolicy"], "\Microsoft\Graph\Model\AuthorizationPolicy") || is_null($this->_propDict["authorizationPolicy"])) {
                 return $this->_propDict["authorizationPolicy"];
             } else {
                 $this->_propDict["authorizationPolicy"] = new AuthorizationPolicy($this->_propDict["authorizationPolicy"]);
@@ -118,7 +149,7 @@ class PolicyRoot extends Entity
      /** 
      * Gets the claimsMappingPolicies
      *
-     * @return array The claimsMappingPolicies
+     * @return array|null The claimsMappingPolicies
      */
     public function getClaimsMappingPolicies()
     {
@@ -138,7 +169,7 @@ class PolicyRoot extends Entity
     */
     public function setClaimsMappingPolicies($val)
     {
-		$this->_propDict["claimsMappingPolicies"] = $val;
+        $this->_propDict["claimsMappingPolicies"] = $val;
         return $this;
     }
     
@@ -146,7 +177,7 @@ class PolicyRoot extends Entity
      /** 
      * Gets the homeRealmDiscoveryPolicies
      *
-     * @return array The homeRealmDiscoveryPolicies
+     * @return array|null The homeRealmDiscoveryPolicies
      */
     public function getHomeRealmDiscoveryPolicies()
     {
@@ -166,7 +197,7 @@ class PolicyRoot extends Entity
     */
     public function setHomeRealmDiscoveryPolicies($val)
     {
-		$this->_propDict["homeRealmDiscoveryPolicies"] = $val;
+        $this->_propDict["homeRealmDiscoveryPolicies"] = $val;
         return $this;
     }
     
@@ -174,7 +205,7 @@ class PolicyRoot extends Entity
      /** 
      * Gets the permissionGrantPolicies
      *
-     * @return array The permissionGrantPolicies
+     * @return array|null The permissionGrantPolicies
      */
     public function getPermissionGrantPolicies()
     {
@@ -194,7 +225,7 @@ class PolicyRoot extends Entity
     */
     public function setPermissionGrantPolicies($val)
     {
-		$this->_propDict["permissionGrantPolicies"] = $val;
+        $this->_propDict["permissionGrantPolicies"] = $val;
         return $this;
     }
     
@@ -202,7 +233,7 @@ class PolicyRoot extends Entity
      /** 
      * Gets the tokenIssuancePolicies
      *
-     * @return array The tokenIssuancePolicies
+     * @return array|null The tokenIssuancePolicies
      */
     public function getTokenIssuancePolicies()
     {
@@ -222,7 +253,7 @@ class PolicyRoot extends Entity
     */
     public function setTokenIssuancePolicies($val)
     {
-		$this->_propDict["tokenIssuancePolicies"] = $val;
+        $this->_propDict["tokenIssuancePolicies"] = $val;
         return $this;
     }
     
@@ -230,7 +261,7 @@ class PolicyRoot extends Entity
      /** 
      * Gets the tokenLifetimePolicies
      *
-     * @return array The tokenLifetimePolicies
+     * @return array|null The tokenLifetimePolicies
      */
     public function getTokenLifetimePolicies()
     {
@@ -250,7 +281,7 @@ class PolicyRoot extends Entity
     */
     public function setTokenLifetimePolicies($val)
     {
-		$this->_propDict["tokenLifetimePolicies"] = $val;
+        $this->_propDict["tokenLifetimePolicies"] = $val;
         return $this;
     }
     
@@ -258,7 +289,7 @@ class PolicyRoot extends Entity
      /** 
      * Gets the featureRolloutPolicies
      *
-     * @return array The featureRolloutPolicies
+     * @return array|null The featureRolloutPolicies
      */
     public function getFeatureRolloutPolicies()
     {
@@ -278,7 +309,38 @@ class PolicyRoot extends Entity
     */
     public function setFeatureRolloutPolicies($val)
     {
-		$this->_propDict["featureRolloutPolicies"] = $val;
+        $this->_propDict["featureRolloutPolicies"] = $val;
+        return $this;
+    }
+    
+    /**
+    * Gets the adminConsentRequestPolicy
+    *
+    * @return AdminConsentRequestPolicy|null The adminConsentRequestPolicy
+    */
+    public function getAdminConsentRequestPolicy()
+    {
+        if (array_key_exists("adminConsentRequestPolicy", $this->_propDict)) {
+            if (is_a($this->_propDict["adminConsentRequestPolicy"], "\Microsoft\Graph\Model\AdminConsentRequestPolicy") || is_null($this->_propDict["adminConsentRequestPolicy"])) {
+                return $this->_propDict["adminConsentRequestPolicy"];
+            } else {
+                $this->_propDict["adminConsentRequestPolicy"] = new AdminConsentRequestPolicy($this->_propDict["adminConsentRequestPolicy"]);
+                return $this->_propDict["adminConsentRequestPolicy"];
+            }
+        }
+        return null;
+    }
+    
+    /**
+    * Sets the adminConsentRequestPolicy
+    *
+    * @param AdminConsentRequestPolicy $val The adminConsentRequestPolicy
+    *
+    * @return PolicyRoot
+    */
+    public function setAdminConsentRequestPolicy($val)
+    {
+        $this->_propDict["adminConsentRequestPolicy"] = $val;
         return $this;
     }
     
@@ -286,7 +348,7 @@ class PolicyRoot extends Entity
      /** 
      * Gets the conditionalAccessPolicies
      *
-     * @return array The conditionalAccessPolicies
+     * @return array|null The conditionalAccessPolicies
      */
     public function getConditionalAccessPolicies()
     {
@@ -306,19 +368,19 @@ class PolicyRoot extends Entity
     */
     public function setConditionalAccessPolicies($val)
     {
-		$this->_propDict["conditionalAccessPolicies"] = $val;
+        $this->_propDict["conditionalAccessPolicies"] = $val;
         return $this;
     }
     
     /**
     * Gets the identitySecurityDefaultsEnforcementPolicy
     *
-    * @return IdentitySecurityDefaultsEnforcementPolicy The identitySecurityDefaultsEnforcementPolicy
+    * @return IdentitySecurityDefaultsEnforcementPolicy|null The identitySecurityDefaultsEnforcementPolicy
     */
     public function getIdentitySecurityDefaultsEnforcementPolicy()
     {
         if (array_key_exists("identitySecurityDefaultsEnforcementPolicy", $this->_propDict)) {
-            if (is_a($this->_propDict["identitySecurityDefaultsEnforcementPolicy"], "Microsoft\Graph\Model\IdentitySecurityDefaultsEnforcementPolicy")) {
+            if (is_a($this->_propDict["identitySecurityDefaultsEnforcementPolicy"], "\Microsoft\Graph\Model\IdentitySecurityDefaultsEnforcementPolicy") || is_null($this->_propDict["identitySecurityDefaultsEnforcementPolicy"])) {
                 return $this->_propDict["identitySecurityDefaultsEnforcementPolicy"];
             } else {
                 $this->_propDict["identitySecurityDefaultsEnforcementPolicy"] = new IdentitySecurityDefaultsEnforcementPolicy($this->_propDict["identitySecurityDefaultsEnforcementPolicy"]);

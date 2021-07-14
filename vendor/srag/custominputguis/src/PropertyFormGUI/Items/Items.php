@@ -11,6 +11,7 @@ use ilPropertyFormGUI;
 use ilRadioOption;
 use ilRepositorySelector2InputGUI;
 use ilUtil;
+use srag\CustomInputGUIs\M365File\HiddenInputGUI\HiddenInputGUI;
 use srag\CustomInputGUIs\M365File\MultiLineInputGUI\MultiLineInputGUI;
 use srag\CustomInputGUIs\M365File\PropertyFormGUI\Exception\PropertyFormGUIException;
 use srag\CustomInputGUIs\M365File\PropertyFormGUI\PropertyFormGUI;
@@ -26,8 +27,6 @@ use TypeError;
  * Class Items
  *
  * @package srag\CustomInputGUIs\M365File\PropertyFormGUI\Items
- *
- * @author  studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
  *
  * @access  namespace
  */
@@ -234,6 +233,10 @@ final class Items
         $input_tpl->setCurrentBlock("input");
 
         foreach ($inputs as $input) {
+            if ($input instanceof HiddenInputGUI) {
+                $input_tpl->setVariableEscaped("HIDDEN", " hidden");
+            }
+
             $input_tpl->setVariableEscaped("TITLE", $input->getTitle());
 
             if ($input->getRequired()) {

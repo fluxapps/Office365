@@ -22,9 +22,6 @@ use srag\DIC\M365File\DICTrait;
  *
  * @package    srag\CustomInputGUIs\M365File\MultiLineInputGUI
  *
- * @author     studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
- * @author     Michael Herren <mh@studer-raimann.ch>
- *
  * @deprecated Please switch to `MultiLineNewInputGUI`
  */
 class MultiLineInputGUI extends ilFormPropertyGUI implements ilTableFilterItem, ilToolbarItem

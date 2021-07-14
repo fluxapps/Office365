@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.42.9]
+- Hide HiddenInputGUI in MultiLineNewInputGUI
+
+## [0.42.8]
+- Change utils url
+
+## [0.42.7]
+- Update urls
+
+## [0.42.6]
+- Ignore not supported languages
+
+## [0.42.5]
+- Ignore not supported languages
+
 ## [0.42.4]
 - Update readme
 

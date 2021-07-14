@@ -36,7 +36,7 @@ class OfficeConfigurationGroupAssignmentTarget extends OfficeConfigurationAssign
     * Gets the groupId
     * The Id of the AAD group we are targeting the device configuration to.
     *
-    * @return string The groupId
+    * @return string|null The groupId
     */
     public function getGroupId()
     {

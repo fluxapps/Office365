@@ -15,10 +15,6 @@ use srag\DIC\M365File\DICTrait;
  *
  * @package    srag\CustomInputGUIs\M365File\MultiSelectSearchInputGUI
  *
- * @author     studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
- * @author     Oskar Truffer <ot@studer-raimann.ch>
- * @author     Martin Studer <ms@studer-raimann.ch>
- *
  * @deprecated Please switch to `MultiSelectSearchNewInputGUI`
  */
 class MultiSelectSearchInputGUI extends ilMultiSelectInputGUI implements ilTableFilterItem, ilToolbarItem

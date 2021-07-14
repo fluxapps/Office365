@@ -17,8 +17,6 @@ use srag\DIC\M365File\Version\PluginVersionParameter;
  * Class ScreenshotsInputGUI
  *
  * @package srag\CustomInputGUIs\M365File\ScreenshotsInputGUI
- *
- * @author  studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
  */
 class ScreenshotsInputGUI extends ilFormPropertyGUI implements Pluginable
 {

@@ -74,8 +74,6 @@ use srag\DIC\M365File\Exception\DICException;
  * Interface DICInterface
  *
  * @package srag\DIC\M365File\DIC
- *
- * @author  studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
  */
 interface DICInterface
 {

@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.7.8]
+- Change utils url
+
+## [0.7.7]
+- Update urls
+
+## [0.7.6]
+- Ignore not supported languages
+
+## [0.7.5]
+- Ignore not supported languages
+
 ## [0.7.4]
 - Update readme
 

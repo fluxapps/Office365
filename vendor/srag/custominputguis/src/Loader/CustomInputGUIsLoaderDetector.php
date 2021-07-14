@@ -17,8 +17,6 @@ use srag\DIC\M365File\Loader\AbstractLoaderDetector;
  * Class CustomInputGUIsLoaderDetector
  *
  * @package srag\CustomInputGUIs\M365File\Loader
- *
- * @author  studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
  */
 class CustomInputGUIsLoaderDetector extends AbstractLoaderDetector
 {
