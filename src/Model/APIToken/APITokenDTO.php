@@ -12,10 +12,6 @@ class APITokenDTO
      */
     private $access_token;
     /**
-     * @var string
-     */
-    private $refresh_token;
-    /**
      * @var int
      */
     private $expiry;
@@ -23,13 +19,11 @@ class APITokenDTO
     /**
      * APIToken constructor.
      * @param string $access_token
-     * @param string $refresh_token
      * @param int    $expiry
      */
-    public function __construct(string $access_token, string $refresh_token, int $expiry)
+    public function __construct(string $access_token, int $expiry)
     {
         $this->access_token = $access_token;
-        $this->refresh_token = $refresh_token;
         $this->expiry = $expiry;
     }
 
@@ -38,7 +32,6 @@ class APITokenDTO
     {
         return json_encode([
             'access_token' => $this->access_token,
-            'refresh_token' => $this->refresh_token,
             'expiry' => $this->expiry
         ]);
     }
@@ -48,14 +41,8 @@ class APITokenDTO
         $stdClass = json_decode($json);
         return new self(
             $stdClass->access_token,
-            $stdClass->refresh_token,
             $stdClass->expiry
         );
-    }
-
-    public function getRefreshToken() : string
-    {
-        return $this->refresh_token;
     }
 
     /**

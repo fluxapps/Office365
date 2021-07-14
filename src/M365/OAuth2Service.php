@@ -46,25 +46,10 @@ class OAuth2Service
      */
     public function authorize()
     {
-        $token = $this->token_repository->getToken();
-        if (is_null($token) || !$token->getRefreshToken()) {
-            $this->log()->info('no refresh token found, fetching new access token from api');
-            $this->token_repository->replaceToken(
-                $this->oauth2Client->acquireNewAccessToken()
-            );
-        } else {
-            $this->log()->info('refreshing access token');
-            try {
-                $this->token_repository->replaceToken(
-                    $this->oauth2Client->refreshToken($token->getRefreshToken())
-                );
-            } catch (IdentityProviderException $e) {
-                $this->log()->info('refresh failed with message: ' . $e->getMessage());
-                $this->log()->info('flush token and re-authorize..');
-                $this->token_repository->flushToken();
-                $this->authorize();
-            }
-        }
+        $this->log()->info('fetching new access token from api');
+        $this->token_repository->replaceToken(
+            $this->oauth2Client->acquireNewAccessToken()
+        );
     }
 
     /**

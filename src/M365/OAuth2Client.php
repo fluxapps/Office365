@@ -19,7 +19,6 @@ class OAuth2Client
 
     const LOGIN_URL = 'https://login.microsoftonline.com/';
     protected static $scopes = [
-        'offline_access',
         'Files.ReadWrite.All'
     ];
 
@@ -55,7 +54,6 @@ class OAuth2Client
         ]);
         return new APITokenDTO(
             $token->getToken(),
-            $token->getRefreshToken(),
             $token->getExpires()
         );
     }
@@ -63,24 +61,6 @@ class OAuth2Client
     private function getOAuth2BasePath() : string
     {
         return self::LOGIN_URL . $this->config()->getValue(FormBuilder::KEY_TENANT_ID) . '/oauth2/v2.0';
-    }
-
-    /**
-     * @param string $refresh_token
-     * @return APITokenDTO
-     * @throws IdentityProviderException
-     */
-    public function refreshToken(string $refresh_token) : APITokenDTO
-    {
-        $token = $this->oauth2_provider->getAccessToken("refresh_token", [
-            "refresh_token" => $refresh_token,
-            "scope" => implode(' ', self::$scopes)
-        ]);
-        return new APITokenDTO(
-            $token->getToken(),
-            $token->getRefreshToken(),
-            $token->getExpires()
-        );
     }
 
 }
